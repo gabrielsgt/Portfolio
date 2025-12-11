@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,23 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Space+Grotesk:wght@300;500&display=swap"
+        rel="stylesheet">
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.6/build/spline-viewer.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="loader-screen" id="loader">
         <div class="loader-content">
             <div class="counter" id="counter">0</div>
-            <div class="progress-bar-bg"><div class="progress-bar-fill" id="bar"></div></div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="bar"></div>
+            </div>
             <div class="status-text">Initialisation...</div>
         </div>
     </div>
@@ -41,19 +47,20 @@
                     </div>
                     <div class="icon-circle">
                         <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" />
                         </svg>
                     </div>
                 </a>
 
-                <a href="/portfolio_creatif.html" class="card creative">
+                <a href="../Portfolio_creatif/index.html" class="card creative">
                     <div class="card-text">
                         <h2>Portfolio créatif</h2>
                         <p>Expérimentations & Design Web</p>
                     </div>
                     <div class="icon-circle">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            <path
+                                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
                         </svg>
                     </div>
                 </a>
@@ -61,12 +68,11 @@
         </div>
     </main>
 
-    <spline-viewer
-        id="spline"
-        loading-anim-type="none"
+    <spline-viewer id="spline" loading-anim-type="none"
         url="https://prod.spline.design/fpycavKQQi6wxnXg/scene.splinecode">
     </spline-viewer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
