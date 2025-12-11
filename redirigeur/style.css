@@ -1,0 +1,354 @@
+/* --- BASE --- */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #050505;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+}
+
+/* --- LAYOUT UI (Zone Droite) --- */
+.ui-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    /* CHANGEMENT ICI : On centre tout le bloc verticalement */
+    justify-content: center;
+    /* On gère l'espace entre le NOM et le MENU ici (8vh = 8% de la hauteur) */
+    gap: 8vh;
+    padding: 0 4vw 0 2vw;
+    box-sizing: border-box;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.ui-container.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- IDENTITÉ (Nom) --- */
+.identity-block h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 0;
+    letter-spacing: -3px;
+    background: linear-gradient(165deg, #ffffff 0%, #e0e0e0 50%, #888888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.role-tag {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ff8c42;
+    margin-bottom: 1rem;
+    background: rgba(255, 140, 66, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* --- SECTION CHOIX --- */
+.selection-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* La nouvelle phrase d'accroche */
+.cta-phrase {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- CARTES SOFT GLASSMORPHISM --- */
+/* --- CARTES SOFT GLASSMORPHISM (ENHANCED) --- */
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem;
+    /* CHANGEMENT : Fond plus profond et flou plus intense */
+    background: rgba(20, 20, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de brillance interne au survol */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(30, 30, 30, 0.6);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card-text h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+.card-text p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    margin: 8px 0 0 0;
+    color: #888;
+    transition: color 0.3s ease;
+    font-weight: 400;
+}
+
+/* --- ICÔNES (CORRECTION COULEURS) --- */
+.icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.icon-circle svg {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+/* --- STYLE SPÉCIFIQUE PRO (Flèche) --- */
+/* --- STYLE SPÉCIFIQUE PRO (Bleu - Nouveau Thème) --- */
+.card.pro .icon-circle svg {
+    fill: none;
+    stroke: #8899a6;
+    stroke-width: 2px;
+}
+
+.card.pro:hover {
+    background: rgba(21, 58, 92, 0.2);
+    /* Fond subtil bleu profond */
+    border-color: #00c2ff;
+    /* Bordure Cyan */
+}
+
+.card.pro:hover h2 {
+    color: #00c2ff;
+    /* Titre Cyan */
+}
+
+.card.pro:hover .icon-circle {
+    background: #00c2ff;
+    /* Rond CYAN */
+    box-shadow: 0 0 25px rgba(0, 194, 255, 0.4);
+    /* Glow Cyan */
+    transform: scale(1.15) rotate(-15deg);
+}
+
+.card.pro:hover .icon-circle svg {
+    stroke: #051a2e;
+    /* Flèche sombre sur fond cyan pour contraste */
+}
+
+.card.pro:hover p {
+    color: #a0d9f0;
+    /* Texte descriptif bleu clair */
+}
+
+/* --- STYLE SPÉCIFIQUE CRÉATIF (Étoile) --- */
+.card.creative .icon-circle svg {
+    fill: #ccc;
+    /* Étoile grise par défaut */
+    stroke: none;
+    /* Pas de contour */
+}
+
+.card.creative:hover {
+    background: rgba(255, 140, 66, 0.08);
+    /* Fond subtil orange */
+    border-color: rgb(255, 140, 66);
+    /* Bordure orange */
+}
+
+.card.creative:hover h2 {
+    color: #ff8c42;
+}
+
+.card.creative:hover .icon-circle {
+    background: #ff8c42;
+    /* Rond ORANGE VIF */
+    box-shadow: 0 0 20px rgba(255, 140, 66, 0.5);
+    /* Glow */
+    transform: scale(1.1) rotate(90deg);
+    /* Petite rotation fun */
+}
+
+.card.creative:hover .icon-circle svg {
+    fill: #ffffff;
+    /* Étoile blanche sur fond orange */
+}
+
+.card.creative:hover p {
+    color: #ffccaa;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .ui-container {
+        width: 50vw;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ui-container {
+        width: 100%;
+        background: transparent;
+        gap: 4vh;
+        justify-content: flex-end;
+        padding-bottom: 3rem;
+    }
+
+    .identity-block h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* --- LOADER (à mettre dans portfolio_pro.html) --- */
+spline-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.loader-screen.slide-up {
+    transform: translateY(-100%);
+}
+
+.loader-content {
+    text-align: center;
+    width: 300px;
+}
+
+.counter {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    font-variant-numeric: tabular-nums;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #fff;
+    transition: width 0.2s linear;
+}
+
+.status-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #888;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

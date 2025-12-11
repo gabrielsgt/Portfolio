@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="loader-screen" id="loader">
+        <div class="loader-content">
+            <div class="counter" id="counter">0</div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="bar"></div>
+            </div>
+            <div class="status-text">Chargement...</div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.4/build/spline-viewer.js"></script>
+    <spline-viewer id="spline" url="https://prod.spline.design/G3sLQb0oUDZdUc9m/scene.splinecode"></spline-viewer>
+
+    <a href="../index.html" class="back-btn">
+        ← Retour au portfolio
+    </a>
+
+
+
+    <!-- TOOLS BAR -->
+
+
+    <!-- HEADER TITLE -->
+    <div class="contact-header">
+        <h1 class="contact-title">Mes contacts</h1>
+        <p class="contact-subtitle">Retrouvez moi sur les réseaux.</p>
+    </div>
+
+    <!-- PREMIUM DOCK -->
+    <nav class="dock-container">
+        <div class="dock-blur-bg"></div>
+
+        <!-- Mail -->
+        <a href="mailto:sagotgabrielpro@gmail.com" class="dock-item magnetic-wrap" aria-label="Email">
+            <div class="magnetic-area"></div>
+            <div class="magnetic-content">
+                <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="tooltip">Email</span>
+            </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/gabriel-sagot-04a991346/" target="_blank" rel="noopener noreferrer"
+            class="dock-item magnetic-wrap" aria-label="LinkedIn">
+            <div class="magnetic-area"></div>
+            <div class="magnetic-content">
+                <div class="icon-box">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" />
+                        <path d="M6 9H2V21H6V9Z" />
+                        <path
+                            d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" />
+                    </svg>
+                </div>
+                <span class="tooltip">LinkedIn</span>
+            </div>
+        </a>
+
+        <div class="dock-separator"></div>
+
+        <!-- CV Card -->
+        <a href="/images/cv.pdf" target="_blank" class="dock-item cv-dock-item" aria-label="CV">
+            <div class="cv-card-wrapper">
+                <div class="cv-card-3d">
+                    <img src="/images/cv.png" alt="CV Preview" class="cv-img">
+                    <div class="cv-shine"></div>
+                </div>
+                <div class="cv-label">
+                    <span class="cv-text">Mon CV</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+        </a>
+    </nav>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
